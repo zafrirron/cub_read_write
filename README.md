@@ -2,37 +2,37 @@
 
 ## reader/writer class and sample usage
 
-Goal -
+Goals -
  - read downloaded CUB data files into python data structure 
  - expose simple data access methods
  - add original image photos sizes data
  - expose csv writer method to write the data into single csv file
     
 prerequesits (includes image draw bounding boxes and image display)-  
-    numpy,  
-    os,  
-    cv2,  
-    csv,  
-    pandas,  
-    PIL,  
-    matplotlib,  
-    pprint,  
+ - numpy,  
+ - os,  
+ - cv2,  
+ - csv,  
+ - pandas,  
+ - PIL,  
+ - matplotlib,  
+ - pprint,  
 
 inputs -  
-    CUB_PATH # (class init) path to original download folder  
-    CSV_PATH # (csv write method) csv file path for writer  
+ - CUB_PATH # (class init) path to original download folder  
+ - CSV_PATH # (csv write method) csv file path for writer  
        
 class methods -  
-    getCubSize()              # CUB database size  (int)  
-    getImages()               # CUB images list    (dictionary 'image number' : 'image path')  
-    getImagesSizes()          # CUB images sizes   (dictionary 'image number' : \['width','height'\])  
-    getBoxes()                # CUB bounding boxes (dictionary 'image number' : \['xcenter','ycenter', 'width', 'height\])  
-    getImgClasses()           # CUB images classes (dictionary 'image number' : 'class number')  
-    getClasses()              # CUB classes names  (dictionary 'class number' : 'class name')  
-    writeCubToCsv(file path)  # write to csv,   
-        file format :   
-            csv header row,  
-            row :  
+ - getCubSize()              # CUB database size  (int)  
+ - getImages()               # CUB images list    (dictionary 'image number' : 'image path')  
+ - getImagesSizes()          # CUB images sizes   (dictionary 'image number' : \['width','height'\])  
+ - getBoxes()                # CUB bounding boxes (dictionary 'image number' : \['xcenter','ycenter', 'width', 'height\])  
+ - getImgClasses()           # CUB images classes (dictionary 'image number' : 'class number')  
+ - getClasses()              # CUB classes names  (dictionary 'class number' : 'class name')  
+ - writeCubToCsv(file path)  # write to csv,   
+     - file format :   
+         - csv header row,  
+         - row :  
                 image path,  
                 image size,  
                 image class name,  
