@@ -46,9 +46,11 @@
              - bounding box height,  
                 
 ### usage - 
-    - cub = CUB_ReadWrite(folde path)  # inialize class read all CU data files from 'folder path'  
-    - cub.{method()}                   # returns methods CUB data as described above  
-    - cub.writeCubToCsv(file path)     # writes csv file to 'file path' in format decribed above  
-    - del(cub)                         # deletes object  
+```python
+    cub = CUB_ReadWrite(folde path)  # inialize class read all CU data files from 'folder path'  
+    cub.{method()}                   # returns methods CUB data as described above  
+    cub.writeCubToCsv(file path)     # writes csv file to 'file path' in format decribed above  
+    del(cub)                         # deletes object  
+```
     
 #### see below in usage sample section (very) simple csv read and display images using csv, pandas, PIL packages  
