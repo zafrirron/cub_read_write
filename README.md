@@ -1,10 +1,10 @@
 # Caltech-UCSD Birds-200-2011 (CUB) - Reader/Writer class
 
 ## Goals -   
-    read downloaded CUB data files into data structure  
-    expose simple data acess methods 
-    add images sizes data  
-    expose csv writer method to write the data into single csv file  
+    + read downloaded CUB data files into python data structure  
+    + expose simple data acess methods 
+    + add images sizes data  
+    + expose csv writer method to write the data into single csv file  
       
 ## prerequesits (includes image draw bounding boxes and image display)-  
     numpy,  
