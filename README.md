@@ -29,6 +29,7 @@ class methods -
     getImgClasses()           # CUB images classes (dictionary 'image number' : 'class number')  
     getClasses()              # CUB classes names  (dictionary 'class number' : 'class name')  
     writeCubToCsv(file path)  # write to csv,   
+      
         file format :   
             csv header row,  
             row :  
@@ -39,6 +40,8 @@ class methods -
                 bounding box ymin,  
                 bounding box xmax,  
                 bounding box ymax,  
+                  
+                  
 usage -   
        cub = CUB_ReadWrite(folde path)  # inialize class read all CU data files from 'folder path'  
        cub.{method()}                   # returns methods CUB data as described above  
