@@ -1,4 +1,4 @@
-# This ipynb presents CUB reader and writer class and sample usage
+# Caltech-UCSD Birds-200-2011 (CUB) - Reader/Writer class
 
 ## Goals -   
     read downloaded CUB data files into data structure  
