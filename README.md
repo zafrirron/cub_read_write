@@ -32,7 +32,7 @@
  - writeCubToCsv(file path)  # write to csv,   
      - file format :   
          - csv header row,  
-         - row :  
+         - data row :  
              - image path,  
              - image size,  
              - image class name,  
