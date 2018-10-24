@@ -45,7 +45,7 @@
              - bounding box width,  
              - bounding box height,  
                 
-### usage - 
+### usage - {put your input in these brackets}
 ```python
     cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path'  
     cub.{method()}                                   # call class methods, retuns CUB data as described above  
