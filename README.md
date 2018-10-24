@@ -23,7 +23,7 @@
  - CSV_PATH # (csv write method) csv filename path to write  
        
 ### class methods -  
- - getCubSize()              # CUB database size  (int images list size, int number on categories)  
+ - getCubSize()              # CUB database size  (int images list size, int number of categories)  
  - getImages()               # CUB images list    (dictionary 'image number' : 'image path')  
  - getImagesSizes()          # CUB images sizes   (dictionary 'image number' : \['width','height'\])  
  - getBoxes()                # CUB bounding boxes (dictionary 'image number' : \['xcenter','ycenter', 'width', 'height\])  
