@@ -1,12 +1,12 @@
-### This ipynb presents CUB reader and writer class and sample usage
+# This ipynb presents CUB reader and writer class and sample usage
 
-Goals -   
+##Goals -   
     read downloaded CUB data files into data structure  
     expose simple data acess methods 
     add images sizes data  
     expose csv writer method to write the data into single csv file  
       
-prerequesits (includes image draw bounding boxes and image display)-  
+##prerequesits (includes image draw bounding boxes and image display)-  
     numpy,  
     os,  
     cv2,  
@@ -17,7 +17,7 @@ prerequesits (includes image draw bounding boxes and image display)-
     pprint,  
   
   
-inputs -  
+##inputs -  
     CUB_PATH # (class init) path to original download folder  
     CSV_PATH # (csv write method) csv file path for writer  
          
