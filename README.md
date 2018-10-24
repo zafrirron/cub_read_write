@@ -1,7 +1,6 @@
-# Caltech-UCSD Birds-200-2011 (CUB) -  
-## database reader/csv writer class
+# Caltech-UCSD Birds-200-2011 (CUB) - reader & csv writer class
 
-## reader/csv writer class and sample usage
+## python reader & csv writer class + sample usage
 
 ### Goals -
  - read downloaded CUB data files into python data structure 
