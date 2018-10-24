@@ -40,6 +40,10 @@
                 bounding box ymin,  
                 bounding box xmax,  
                 bounding box ymax,  
+                bounding box centerx,  
+                bounding box centery,  
+                bounding box width,  
+                bounding box height,  
                   
                   
 ## usage -   
