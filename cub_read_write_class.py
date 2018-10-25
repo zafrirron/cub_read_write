@@ -9,13 +9,11 @@ class CUB_ReadWrite:
         IMGCLASS_FILE = "image_class_labels.txt"
         CLASSES_FILE  = "classes.txt"
         
-        print(os.path.exists(cubPath))
         if (not (os.path.exists(cubPath))):
             raise ValueError("CUB data folder %s not found" % cubPath)
         else:
             self.cubPath = cubPath
             self.imgTxtPath = os.path.join(cubPath,IMAGES_FILE)
-            print (self.imgTxtPath)
             self.bbTxtPath = os.path.join(cubPath,BBOX_FILE)
             self.imgClassPath = os.path.join(cubPath,IMGCLASS_FILE)
             self.classesPath = os.path.join(cubPath,CLASSES_FILE)
