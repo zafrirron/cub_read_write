@@ -65,7 +65,7 @@ download the CUB data files from [CUB data files](http://www.vision.caltech.edu/
     cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path' 
     cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
     del(cub)                                         # deletes cub object  
-    csvData =  pd.read_csv(csvPath)                  # read the csv creates file into pandas dataframe and use pandas  "magic"
+    csvData =  pd.read_csv(csvPath)                  # read the csv file into pandas dataframe and use panda's queries
 ```
 
 #### open [this notebook](https://github.com/zafrirron/cub_read_write/blob/master/cub_read_write_demo.ipynb) to see a demo of this class usage  
