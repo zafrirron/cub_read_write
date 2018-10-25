@@ -68,4 +68,4 @@ download the CUB data files from [CUB data files](http://www.vision.caltech.edu/
     csvData =  pd.read_csv(csvPath)                  # read the csv creates file into pandas dataframe and use pandas  "magic"
 ```
 
-#### open cub_read_write_demo.ipynb to see a demo of this class usage  
+#### open [this notebook](https://github.com/zafrirron/cub_read_write/blob/master/cub_read_write_demo.ipynb) to see a demo of this class usage  
