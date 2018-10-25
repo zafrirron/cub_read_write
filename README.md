@@ -6,7 +6,7 @@
  - read downloaded CUB data files into python data structure 
  - expose simple data access methods
  - add original image photos sizes data
- - expose csv writer method to write the data into single csv file
+ - expose csv writer method to write the attributes into single csv file
     
 ### prerequesits (includes image draw bounding boxes and image display)-  
  - numpy,  
