@@ -93,7 +93,7 @@ class CUB_ReadWrite:
     
     def writeCubToCsv(self,csvFilePath):
         with open(csvFilePath, 'w') as csvfile:
-            fieldnames = ['filename', 'image-width', 'image-height', 'class', 'xmin', 'ymin', 'xmax', 'ymax', 'centerx', 'centery', 'width', 'height' ]
+            fieldnames = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax', 'centerx', 'centery', 'b-width', 'b-height' ]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             for k in self.imgList:
@@ -111,5 +111,5 @@ class CUB_ReadWrite:
                 ymax = int(self.bboxDict[self.imgList[i]][1] + boxHeight)
                 centerx = int(self.bboxDict[self.imgList[i]][0] + boxWidth / 2)
                 centery = int(self.bboxDict[self.imgList[i]][1] + boxHeight / 2)
-                writer.writerow({'filename' : imgPath,'image-width' : imWidth, 'image-height' : imHeight,'class' : imgClass,'xmin' : xmin,\
-                     'ymin' : ymin,'xmax' : xmax,'ymax' : ymax, 'centerx' : centerx, 'centery' : centery, 'width' : boxWidth, 'height' : boxHeight})
+                writer.writerow({'filename' : imgPath,'width' : imWidth, 'height' : imHeight,'class' : imgClass,'xmin' : xmin,\
+                     'ymin' : ymin,'xmax' : xmax,'ymax' : ymax, 'centerx' : centerx, 'centery' : centery, 'b-width' : boxWidth, 'b-height' : boxHeight})

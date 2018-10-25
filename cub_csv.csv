@@ -1,4 +1,4 @@
-filename,image-width,image-height,class,xmin,ymin,xmax,ymax,centerx,centery,width,height
+filename,width,height,class,xmin,ymin,xmax,ymax,centerx,centery,b-width,b-height
 ../../CUB_200_2011/images\001.Black_footed_Albatross/Black_Footed_Albatross_0046_18.jpg,500,335,001.Black_footed_Albatross,60,27,385,331,222,179,325,304
 ../../CUB_200_2011/images\001.Black_footed_Albatross/Black_Footed_Albatross_0009_34.jpg,500,336,001.Black_footed_Albatross,139,30,292,294,215,162,153,264
 ../../CUB_200_2011/images\001.Black_footed_Albatross/Black_Footed_Albatross_0002_55.jpg,500,347,001.Black_footed_Albatross,14,112,402,298,208,205,388,186
