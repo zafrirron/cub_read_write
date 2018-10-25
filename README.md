@@ -8,17 +8,14 @@
  - add original image photos sizes data
  - expose csv writer method to write the attributes into single csv file
     
-### prerequesits (includes image draw bounding boxes and image display)-  
- - numpy  
- - os  
- - sys  
- - cv2  
- - csv  
- - pandas  
- - PIL  
- - matplotlib  
- - pprint  
+### CUB data
+download the CUB data files from [CUB data files] http://www.vision.caltech.edu/visipedia-data/CUB-200-2011/CUB_200_2011.tgz
 
+### class prerequesits -  
+ - os  
+ - csv  
+ - PIL  
+ 
 ### inputs -  
  - CUB_PATH # (class init) path to the downloaded CUB databse folder  
  - CSV_PATH # (csv write method) csv filename path to write  
@@ -46,12 +43,29 @@
              - bounding box width,  
              - bounding box height,  
                 
-### usage - {put your input in these brackets}
+### basic usage - just write csv file 
 ```python
+    # {put your input in these brackets}
     cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path'  
-    cub.{method()}                                   # call class methods, retuns CUB data as described above  
     cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
     del(cub)                                         # deletes cub object  
 ```
-    
+
+### optional usage - call class methods to use CUB source data
+```python
+    #{put your input in these brackets}
+    cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path' 
+    cub.{method()}                                   # call class methods, retuns CUB data as described above     	
+    cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
+    del(cub)                                         # deletes cub object  
+```
+### better usage - call class methods to use CUB source data
+```python
+    #{put your input in these brackets}
+    cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path' 
+    cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
+    del(cub)                                         # deletes cub object  
+	csvData =  pd.read_csv(csvPath)                  # read the csv creates file into pandas dataframe and use pandas  "magic"
+```
+
 #### see below in usage sample section (very) simple csv read and display images using csv, pandas, PIL packages  

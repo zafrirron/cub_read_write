@@ -1,3 +1,6 @@
+import os
+import csv
+from PIL import Image
 class CUB_ReadWrite:
     
     def __init__(self,cubPath):
@@ -16,10 +19,14 @@ class CUB_ReadWrite:
             self.bbTxtPath = os.path.join(cubPath,BBOX_FILE)
             self.imgClassPath = os.path.join(cubPath,IMGCLASS_FILE)
             self.classesPath = os.path.join(cubPath,CLASSES_FILE)
-            if (not (os.path.exists(self.imgTxtPath) and os.path.exists(self.bbTxtPath) and os.path.exists(self.imgClassPath) \
-                    and os.path.exists(self.classesPath) and os.path.exists(os.path.join(cubPath,'images')))):
-                raise ValueError("a CUB data file not found ({} ,{} ,{}, {}, {})".format(self.imgTxtPath, self.bbTxtPath, \
-                               self.imgClassPath, self.classesPath, 'images folder' ))
+            if (not (os.path.exists(self.imgTxtPath)   and \
+                     os.path.exists(self.bbTxtPath)    and \
+                     os.path.exists(self.imgClassPath) and \
+                     os.path.exists(self.classesPath)  and \
+                     os.path.exists(os.path.join(cubPath,'images')))):
+                raise ValueError("a CUB data file not found ({} ,{} ,{}, {}, {})".format(\
+                               self.imgTxtPath, self.bbTxtPath, self.imgClassPath, \
+                               self.classesPath, 'images folder' ))
             else: 
                 self.imgList,self.imgDict,self.imgSizesDict = self._readImgTxt()
                 self.bboxDict = self._readBB()
@@ -108,4 +115,3 @@ class CUB_ReadWrite:
                 centery = int(self.bboxDict[self.imgList[i]][1] + boxHeight / 2)
                 writer.writerow({'filename' : imgPath,'image-width' : imWidth, 'image-height' : imHeight,'class' : imgClass,'xmin' : xmin,\
                      'ymin' : ymin,'xmax' : xmax,'ymax' : ymax, 'centerx' : centerx, 'centery' : centery, 'width' : boxWidth, 'height' : boxHeight})
-    
