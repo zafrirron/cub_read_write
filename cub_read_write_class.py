@@ -6,15 +6,25 @@ class CUB_ReadWrite:
         IMGCLASS_FILE = "image_class_labels.txt"
         CLASSES_FILE  = "classes.txt"
         
-        self.cubPath = cubPath
-        self.imgTxtPath = os.path.join(cubPath,IMAGES_FILE)
-        self.bbTxtPath = os.path.join(cubPath,BBOX_FILE)
-        self.imgClassPath = os.path.join(cubPath,IMGCLASS_FILE)
-        self.classesPath = os.path.join(cubPath,CLASSES_FILE)
-        self.imgList,self.imgDict,self.imgSizesDict = self._readImgTxt()
-        self.bboxDict = self._readBB()
-        self.imgClassDict = self._readImgClass()
-        self.classesDict = self._readClasses()
+        print(os.path.exists(cubPath))
+        if (not (os.path.exists(cubPath))):
+            raise ValueError("CUB data folder %s not found" % cubPath)
+        else:
+            self.cubPath = cubPath
+            self.imgTxtPath = os.path.join(cubPath,IMAGES_FILE)
+            print (self.imgTxtPath)
+            self.bbTxtPath = os.path.join(cubPath,BBOX_FILE)
+            self.imgClassPath = os.path.join(cubPath,IMGCLASS_FILE)
+            self.classesPath = os.path.join(cubPath,CLASSES_FILE)
+            if (not (os.path.exists(self.imgTxtPath) and os.path.exists(self.bbTxtPath) and os.path.exists(self.imgClassPath) \
+                    and os.path.exists(self.classesPath) and os.path.exists(os.path.join(cubPath,'images')))):
+                raise ValueError("a CUB data file not found ({} ,{} ,{}, {}, {})".format(self.imgTxtPath, self.bbTxtPath, \
+                               self.imgClassPath, self.classesPath, 'images folder' ))
+            else: 
+                self.imgList,self.imgDict,self.imgSizesDict = self._readImgTxt()
+                self.bboxDict = self._readBB()
+                self.imgClassDict = self._readImgClass()
+                self.classesDict = self._readClasses()
         
     def _getImgSize(self,imgPath):
         im = Image.open(imgPath)
@@ -28,7 +38,7 @@ class CUB_ReadWrite:
             spamreader = csv.reader(f, delimiter=' ')
             for row in spamreader:
                 imgList.append(int(row[0]))
-                imgPath = os.path.join('images',row[1])
+                imgPath = os.path.join(self.cubPath+'images',row[1])
                 width,height = self._getImgSize(imgPath)
                 imgDict[int(row[0])] = imgPath
                 imgSizesDict[int(row[0])] = [width,height]
