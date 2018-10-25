@@ -8,7 +8,7 @@
  - add original image photos sizes data
  - expose csv writer method to write the attributes into single csv file
     
-### CUB data
+### CUB data -
 download the CUB data files from [CUB data files](http://www.vision.caltech.edu/visipedia-data/CUB-200-2011/CUB_200_2011.tgz)
 
 ### class prerequesits -  
@@ -51,7 +51,7 @@ download the CUB data files from [CUB data files](http://www.vision.caltech.edu/
     del(cub)                                         # deletes cub object  
 ```
 
-### optional usage - call class methods to use CUB source data
+### optional usage - call class methods to use the CUB source data
 ```python
     #{put your input in these brackets}
     cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path' 
@@ -59,7 +59,7 @@ download the CUB data files from [CUB data files](http://www.vision.caltech.edu/
     cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
     del(cub)                                         # deletes cub object  
 ```
-### better usage - ead csv data into pandas dataframe, use pandas to acess CUB data
+### better usage - read csv data into pandas dataframe, use pandas to acess CUB data
 ```python
     #{put your input in these brackets}
     cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path' 
