@@ -68,4 +68,5 @@ download the CUB data files from [CUB data files](http://www.vision.caltech.edu/
     csvData =  pd.read_csv(csvPath)                  # read the csv file into pandas dataframe and use panda's queries
 ```
 
-#### open [this notebook](https://github.com/zafrirron/cub_read_write/blob/master/cub_read_write_demo.ipynb) to see a demo of this class usage  
+#### open [this notebook](https://github.com/zafrirron/cub_read_write/blob/master/cub_read_write_demo.ipynb) to see a demo of this class usage 
+(if you cant see the notebook, this is due to github ipynb render issues, please download and use locally, make sure you have the prerequesites installed) 
