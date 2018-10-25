@@ -9,7 +9,7 @@
  - expose csv writer method to write the attributes into single csv file
     
 ### CUB data
-download the CUB data files from [CUB data files] http://www.vision.caltech.edu/visipedia-data/CUB-200-2011/CUB_200_2011.tgz
+download the CUB data files from [CUB data files](http://www.vision.caltech.edu/visipedia-data/CUB-200-2011/CUB_200_2011.tgz)
 
 ### class prerequesits -  
  - os  
