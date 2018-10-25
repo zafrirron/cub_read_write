@@ -9,14 +9,15 @@
  - expose csv writer method to write the attributes into single csv file
     
 ### prerequesits (includes image draw bounding boxes and image display)-  
- - numpy,  
- - os,  
- - cv2,  
- - csv,  
- - pandas,  
- - PIL,  
- - matplotlib,  
- - pprint,  
+ - numpy  
+ - os  
+ - sys  
+ - cv2  
+ - csv  
+ - pandas  
+ - PIL  
+ - matplotlib  
+ - pprint  
 
 ### inputs -  
  - CUB_PATH # (class init) path to the downloaded CUB databse folder  
