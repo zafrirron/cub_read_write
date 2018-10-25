@@ -59,13 +59,13 @@ download the CUB data files from [CUB data files](http://www.vision.caltech.edu/
     cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
     del(cub)                                         # deletes cub object  
 ```
-### better usage - call class methods to use CUB source data
+### better usage - ead csv data into pandas dataframe, use pandas to acess CUB data
 ```python
     #{put your input in these brackets}
     cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path' 
     cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
     del(cub)                                         # deletes cub object  
-	csvData =  pd.read_csv(csvPath)                  # read the csv creates file into pandas dataframe and use pandas  "magic"
+    csvData =  pd.read_csv(csvPath)                  # read the csv creates file into pandas dataframe and use pandas  "magic"
 ```
 
 #### see below in usage sample section (very) simple csv read and display images using csv, pandas, PIL packages  
