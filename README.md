@@ -1,15 +1,15 @@
-# [Caltech-UCSD Birds-200-2011 (CUB)](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html)- reader & csv writer class
+# Caltech-UCSD Birds-200-2011 (CUB)[source link](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html)- reader & csv writer class
 
 ## python reader & csv writer class + sample usage
 
 ### Goals -
- - read downloaded CUB data files into python data structure 
- - expose simple data access methods
+ - read the CUB data files into python data structures 
+ - expose simple data access api methods
  - add original image photos sizes data
- - expose csv writer method to write the attributes into single csv file
+ - expose csv writer method to write the images attributes into single csv file
     
 ### CUB data -
-download the CUB data files from [CUB data files](http://www.vision.caltech.edu/visipedia-data/CUB-200-2011/CUB_200_2011.tgz)
+download the CUB data files from [here](http://www.vision.caltech.edu/visipedia-data/CUB-200-2011/CUB_200_2011.tgz)
 
 ### class prerequesits -  
  - os  
@@ -51,7 +51,7 @@ download the CUB data files from [CUB data files](http://www.vision.caltech.edu/
     del(cub)                                         # deletes cub object  
 ```
 
-### optional usage - call class methods to use the CUB source data
+### optional usage - call class methods to get access to the CUB source data
 ```python
     #{put your input in these brackets}
     cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path' 
@@ -66,7 +66,8 @@ download the CUB data files from [CUB data files](http://www.vision.caltech.edu/
     cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
     del(cub)                                         # deletes cub object  
     csvData =  pd.read_csv(csvPath)                  # read the csv file into pandas dataframe and use panda's queries
+	                                                 # see the notebook for pandas queries example
 ```
 
 #### open [this notebook](https://github.com/zafrirron/cub_read_write/blob/master/cub_read_write_demo.ipynb) to see a demo of this class usage 
-(if you cant see the notebook, this is due to github ipynb render issues, please download and use locally, make sure you have the prerequesites installed) 
+(if you can't see the notebook, this is due to github ipynb render issues, please download and use locally, make sure you have the prerequesites installed) 
