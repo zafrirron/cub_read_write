@@ -28,7 +28,7 @@ download the CUB data files from [here](http://www.vision.caltech.edu/visipedia-
  - getBoxes()                # CUB bounding boxes (dictionary 'image number' : \['xcenter','ycenter', 'width', 'height\])  
  - getImgClasses()           # CUB images classes (dictionary 'image number' : 'class number')  
  - getClasses()              # CUB classes names  (dictionary 'class number' : 'class name')  
- - writeCubToCsv(file path)  # write to csv,   
+ - writeCubToCsv(file path)  # write the CUB data to csv file and return the data as pandas dataframe,   
      - file format :   
          - csv header row,  
          - data rows :  
@@ -47,27 +47,28 @@ download the CUB data files from [here](http://www.vision.caltech.edu/visipedia-
 ### basic usage - just write csv file 
 ```python
     # {put your input in these brackets}
-    cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path'  
-    cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
-    del(cub)                                         # deletes cub object  
+    cub = CUB_ReadWrite({cub download folder path})          # inialize class read all CU data files from 'folder path'  
+    cubDf = cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
+    del(cub)                                                 # deletes cub object  
 ```
 
 ### optional usage - call class methods to get access to the CUB source data
 ```python
     #{put your input in these brackets}
-    cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path' 
-    cub.{method()}                                   # call class methods, retuns CUB data as described above     	
-    cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
-    del(cub)                                         # deletes cub object  
+    cub = CUB_ReadWrite({cub download folder path})          # inialize class read all CU data files from 'folder path' 
+    cub.{method()}                                           # call class methods, retuns CUB data as described above     	
+    cubDf = cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
+    del(cub)                                                 # deletes cub object  
 ```
 ### better usage - read csv data into pandas dataframe, use pandas to acess CUB data
 ```python
     #{put your input in these brackets}
-    cub = CUB_ReadWrite({cub download folder path})  # inialize class read all CU data files from 'folder path' 
-    cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
-    del(cub)                                         # deletes cub object  
-    csvData =  pd.read_csv(csvPath)                  # read the csv file into pandas dataframe and use panda's queries
-	                                                 # see the notebook for pandas queries example
+    cub = CUB_ReadWrite({cub download folder path})          # inialize class read all CU data files from 'folder path' 
+    cubDf = cub.writeCubToCsv({output csv file name path})   # writes csv file to 'file path' in format decribed above  
+	del(cub)                                                 # deletes cub object  
+    # ... use pandas methods and queries on the cubDf dataframe
+    #csvData =  pd.read_csv(csvPath)                         # you can read the csv file into pandas dataframe 
+	                                                         # see the notebook for pandas queries example
 ```
 
 #### open [this notebook](https://github.com/zafrirron/cub_read_write/blob/master/cub_read_write_demo.ipynb) to see a demo of this class usage 

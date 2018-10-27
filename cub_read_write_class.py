@@ -1,6 +1,8 @@
 import os
 import csv
+import pandas as pd
 from PIL import Image
+
 class CUB_ReadWrite:
     
     def __init__(self,cubPath):
@@ -94,8 +96,9 @@ class CUB_ReadWrite:
     def writeCubToCsv(self,csvFilePath):
         with open(csvFilePath, 'w') as csvfile:
             fieldnames = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax', 'centerx', 'centery', 'b-width', 'b-height' ]
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writeheader()
+            #writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            #writer.writeheader()
+            cubList = []
             for k in self.imgList:
                 i = k -1  # reindexing
                 #imgPath = os.path.join(self.cubPath, self.imgDict[self.imgList[i]])
@@ -111,5 +114,21 @@ class CUB_ReadWrite:
                 ymax = int(self.bboxDict[self.imgList[i]][1] + boxHeight)
                 centerx = int(self.bboxDict[self.imgList[i]][0] + boxWidth / 2)
                 centery = int(self.bboxDict[self.imgList[i]][1] + boxHeight / 2)
-                writer.writerow({'filename' : imgPath,'width' : imWidth, 'height' : imHeight,'class' : imgClass,'xmin' : xmin,\
-                     'ymin' : ymin,'xmax' : xmax,'ymax' : ymax, 'centerx' : centerx, 'centery' : centery, 'b-width' : boxWidth, 'b-height' : boxHeight})
+                row = (imgPath,
+                    imWidth,
+                    imHeight,
+                    imgClass,
+                    xmin,
+                    ymin,
+                    xmax,
+                    ymax,
+                    centerx,
+                    centery,
+                    boxWidth,
+                    boxHeight)
+                cubList.append(row)
+        cubDf = pd.DataFrame(cubList, columns=fieldnames)
+        cubDf.to_csv(csvFilePath, index=None)
+        return cubDf
+                #writer.writerow({'filename' : imgPath,'width' : imWidth, 'height' : imHeight,'class' : imgClass,'xmin' : xmin,\
+                #     'ymin' : ymin,'xmax' : xmax,'ymax' : ymax, 'centerx' : centerx, 'centery' : centery, 'b-width' : boxWidth, 'b-height' : boxHeight})
